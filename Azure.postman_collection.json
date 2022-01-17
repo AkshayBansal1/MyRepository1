@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "83333484-4dc0-400b-936b-7a5990b96619",
+		"name": "Azure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "cec02054-9518-4366-8947-a0baed92c160",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "A-uBJ4RwkM@.B7BGvYAZC/8xjx5A3fN/",
+							"type": "default"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "default"
+						},
+						{
+							"key": "resource",
+							"value": "https://management.azure.com",
+							"type": "default"
+						},
+						{
+							"key": "scope",
+							"value": "./default",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/74b72ba8-5684-402c-98da-e38799398d7d/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"74b72ba8-5684-402c-98da-e38799398d7d",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Virtual Machines",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCIsImtpZCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzRiNzJiYTgtNTY4NC00MDJjLTk4ZGEtZTM4Nzk5Mzk4ZDdkLyIsImlhdCI6MTY0MjAwNjA0NSwibmJmIjoxNjQyMDA2MDQ1LCJleHAiOjE2NDIwMDk5NDUsImFpbyI6IkUyWmdZSkJaeExaZDU1Z1F6NjJ6L1hyZmx0ZnpBZ0E9IiwiYXBwaWQiOiJjZWMwMjA1NC05NTE4LTQzNjYtODk0Ny1hMGJhZWQ5MmMxNjAiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83NGI3MmJhOC01Njg0LTQwMmMtOThkYS1lMzg3OTkzOThkN2QvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI3YmQ1YjMzMi04Y2FmLTQ5OGMtOWQ0Yi1lOTIxODQ4NTI5ZDkiLCJyaCI6IjAuQVRjQXFDdTNkSVJXTEVDWTJ1T0htVG1OZlZRZ3dNNFlsV1pEaVVlZ3V1MlN3V0EzQUFBLiIsInN1YiI6IjdiZDViMzMyLThjYWYtNDk4Yy05ZDRiLWU5MjE4NDg1MjlkOSIsInRpZCI6Ijc0YjcyYmE4LTU2ODQtNDAyYy05OGRhLWUzODc5OTM5OGQ3ZCIsInV0aSI6InZTb2VfMmt0NDBLTFppVVFrRTBrQUEiLCJ2ZXIiOiIxLjAiLCJ4bXNfdGNkdCI6MTU1MzExMDMwN30.AFwrXxoYZSUT2j4DZT7Mxq5tVSold9jREqPe18LTRFhXEarmBMoxQnZo_Ovh3eZUavirqfaaRBchQLVJFIwKI65RnIHf5BO2GNzlrmiTWuIagOqg5K8ncDaHSHy8VlQnqI1lF9dnVTbTaoPhUr_XWiTJM1cqiRwiN3HPay29234RBbhDOpFd-pXPnUOM8YyKxyVi6sitbJ0Ucfvuw-2lyw3_zS1a6xEc6tRPrboBGO40G79r29gzytch6-b5MD_XfTrhM3R7Z4hmEInO9_sq8cYZIK9I5ASy_lob1vNyu0H5EMeF_jckw56gf5BP5rfxrE9he0CD1MVAvJQEj71hyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/c7e4f49b-8174-4f40-bd74-310d60dc6cb7/providers/Microsoft.Compute/VirtualMachines?api-version=2019-03-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"c7e4f49b-8174-4f40-bd74-310d60dc6cb7",
+						"providers",
+						"Microsoft.Compute",
+						"VirtualMachines"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-03-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
