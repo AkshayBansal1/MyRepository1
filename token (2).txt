@@ -1,0 +1,12 @@
+Subscription Name = Clarios-GI-Dev-Test-001
+Subscriotion id =c7e4f49b-8174-4f40-bd74-310d60dc6cb7
+Application ID =cec02054-9518-4366-8947-a0baed92c160
+Application Key = A-uBJ4RwkM@.B7BGvYAZC/8xjx5A3fN/
+Directory Id= 74b72ba8-5684-402c-98da-e38799398d7d
+
+AWS:
+Account id = 992479741711
+
+Access Key Id = AKIA6OFDHA4HS6VSG7WX
+
+Secret Access Key = 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
