@@ -1,0 +1,9 @@
+$PingServer_UserName = “bobby@acme.com”
+$PingServer_Password = "Password123"
+$Server = "SERVER123.acme.com"
+
+
+$SecurePassword = ConvertTo-SecureString -String $PingServer_Password -AsPlainText -Force
+$Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $PingServer_UserName,$SecurePassword
+
+Invoke-Command -ComputerName $Server -Credential $Credential -ScriptBlock {Get-ChildItem -Path C:\} -Verbose
