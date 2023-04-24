@@ -1,0 +1,23 @@
+{13:487:scriptContent=string#Install-PackageProvider -Name NuGet -Force -Confirm:$false
+Install-Module -Name PSWindowsUpdate -Force -Confirm:$false
+Get-WUList -MicrosoftUpdate
+Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot
+$result_update = Get-WUList -MicrosoftUpdate
+if($result_update -eq $null){
+	Write-Host "Windows is upto Date."
+}
+else {
+	Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot
+}
+$final_check = Get-WUList -MicrosoftUpdate
+Write-Host "Final Check : "$final_check
+13:13:scriptTimeOut=number#3600.0
+22:7:scriptWorkingDirectory=string#
+17:12:scriptRefreshTime=number#120.0
+22:12:deleteResourceAfterRun=boolean#true
+10:17:scriptType=string#powershell
+21:13:resourceSearchReplace=boolean#false
+24:13:scriptInteractiveSession=boolean#false
+14:126:resourceToCopy=ResourceElement#dunes://service.dunes.ch/ResourceElement?id='d3e12e71-d0cc-43f1-8d7b-1ba9b0c084bf'&dunesName='ResourceElement'
+12:13:copyResource=boolean#false
+}
